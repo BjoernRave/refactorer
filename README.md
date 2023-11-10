@@ -1,6 +1,6 @@
 # Refactorer
 
-Lightweight, beautiful and user-friendly interactive prompts
+Basic code refactors with the help of ChatGPT
 
 To use:
 
