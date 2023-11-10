@@ -9,7 +9,6 @@ export const refactorCode = async (config: Configuration) => {
   );
 
   if (confirm !== 'yes') {
-    console.log('Exiting.');
     process.exit(0);
   }
 
@@ -47,15 +46,11 @@ export const refactorCode = async (config: Configuration) => {
 
       let split = code.split('\n');
 
-      console.log(split.length);
-
       if (split[0].indexOf('```') === 0) {
-        console.log('started');
         split.shift();
       }
 
       if (split[split.length - 1].indexOf('```') === 0) {
-        console.log('ended');
         split.pop();
       }
 
