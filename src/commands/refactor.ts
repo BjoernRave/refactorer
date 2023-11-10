@@ -42,18 +42,22 @@ export const refactorCode = async (config: Configuration) => {
 
       const code = response.choices[0].message.content;
 
-      const split = code.split('\n');
+      let split = code.split('\n');
+
+      console.log(split.length);
 
       if (split[0].indexOf('```') === 0) {
+        console.log('started');
         split.shift();
       }
 
       if (split[split.length - 1].indexOf('```') === 0) {
+        console.log('ended');
         split.pop();
       }
 
       // Write the refactored content back to the file
-      fs.writeFileSync(file, code, 'utf8');
+      fs.writeFileSync(file, split.join('\n'), 'utf8');
     }
   }
 };
