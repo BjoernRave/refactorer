@@ -12,6 +12,9 @@ The content of the file should look something like this:
 ```js
 module.exports = {
   globPatterns: ['./components/**/*.tsx', './pages/**/*.tsx', './lib/**/*.ts'],
+  stopReasons: [
+    "If the file is not importing `useTranslation from 'next-translate/useTranslation'`",
+  ],
   instructions: [
     "Remove `import useTranslation from 'next-translate/useTranslation';` if it exists",
     'Remove `const { t } = useTranslation();` if it exists',
