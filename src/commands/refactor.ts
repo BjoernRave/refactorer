@@ -1,8 +1,18 @@
 import fs from 'fs';
 import * as glob from 'glob';
 import { Configuration } from '../lib/types';
+import { getTextInput } from '../lib/utils';
 
 export const refactorCode = async (config: Configuration) => {
+  const confirm = await getTextInput(
+    "Please make sure you've committed your code before continuing. Type 'yes' to continue."
+  );
+
+  if (confirm !== 'yes') {
+    console.log('Exiting.');
+    process.exit(0);
+  }
+
   for (const globPattern of config.globPatterns) {
     // Use the glob module to get an array of file paths that match the glob pattern
     const files = glob.sync(globPattern);
@@ -16,7 +26,7 @@ export const refactorCode = async (config: Configuration) => {
         messages: [
           {
             role: 'system',
-            content: `You are an expert developer. Your job is to refactor code based on the instructions provided by you. You only make the changes that are specified in the instructions. You leave the rest of the code as it is. The code can be found between the two \`\`\` code blocks. You only return  the code, not just the changes. You don't return any markdown surrounding the code, like \`\`\`jsx, you only return the code
+            content: `You are an expert developer. Your job is to refactor code based on the instructions provided by you. You only make the changes that are specified in the instructions. You leave the rest of the code as it is. The code can be found between the two \`\`\` code blocks. You only return  the code, not just the changes. If none of the instructions are relevant to the code, you return the code as it is. 
                 
             Code: 
             \`\`\`
