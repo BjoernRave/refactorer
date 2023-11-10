@@ -2,7 +2,7 @@
   "name": "refactorer",
   "version": "0.4.0",
   "license": "MIT",
-  "description": "CLI to help you manage your locales JSON with translations, replacements, etc. with GPT 3.5",
+  "description": "Basic code refactors with the help of ChatGPT",
   "repository": {
     "type": "git",
     "url": "https://github.com/BjoernRave/refactorer.git"
