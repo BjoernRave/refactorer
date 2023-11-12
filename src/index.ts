@@ -11,7 +11,7 @@ require('dotenv').config();
 program
   .name('refactorer')
   .description('CLI to help you do more advanced refactoring, using OpenAI')
-  .version('0.2.0');
+  .version('0.3.0');
 
 const commands: CommandType[] = [
   {

@@ -1,6 +1,6 @@
 {
   "name": "refactorer",
-  "version": "0.2.0",
+  "version": "0.3.4",
   "license": "MIT",
   "description": "Basic code refactors with the help of ChatGPT",
   "repository": {
@@ -65,6 +65,7 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^10.0.2",
     "@tsconfig/recommended": "^1.0.3",
+    "@types/cli-progress": "^3.11.5",
     "@types/node": "^20.9.0",
     "@types/prompts": "^2.4.8",
     "dts-cli": "^2.0.3",

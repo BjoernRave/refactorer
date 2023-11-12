@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 export interface Configuration {
   globPatterns: string[];
   instructions: string[];
-  skipReasons: string[];
+  refactorReasons: string[];
   openai: OpenAI;
 }
 
